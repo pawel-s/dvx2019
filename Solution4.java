@@ -15,19 +15,19 @@ public class Solution4
     private static String next(String str) {
         int c = 0;
         char ch = str.charAt(0);
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (int i = 0; i <= str.length(); i++) {
             if (i == str.length()) {
-                s += "" + c + ch;
+                s.append("" + c + ch);
             } else if (ch != str.charAt(i)) {
-                s += "" + c + ch;
+                s.append("" + c + ch);
                 ch = str.charAt(i);  
                 c = 1;              
             } else {
                 c++;
             }
         }
-        return s;
+        return s.toString();
     }
 
     private static int sumOfDigits(String str) {
