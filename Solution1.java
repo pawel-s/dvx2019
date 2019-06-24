@@ -7,9 +7,12 @@ public class Solution1
 {
     public static void main(String[] args) throws IOException
     {
+       String fileName = args[0];
+       List<String> lines = Files.readAllLines(Paths.get(fileName));
+
        int palindrome = 0;
-       for (String line : args) {
-            if (isPalindrome(line)) {
+       for (String line : lines) {
+            if (isPalindrome(line.replaceAll("\\ ", ""))) {
                 palindrome++;
             }
        }
